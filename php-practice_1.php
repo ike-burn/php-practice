@@ -18,13 +18,13 @@ echo date('現在時刻は、' . 'Y年m月d日 H時i分s秒' . 'です。');
 $device = 'mac';
 
 if ($device === 'windows') {
-  echo '使用OSはwindowsです。';
-} else {
-   if ($device == 'mac') {
-        echo '使用OSはmacです。';
-    } else {
-        echo "どちらでもありません。";
-    }
+echo '使用OSはwindowsです。';
+}
+if ($device === 'mac') {
+echo '使用OSはmacです。';
+}
+if ($device !== 'windows' && $device !== 'mac') {
+echo 'どちらでもありません。';
 }
 
 
@@ -35,7 +35,7 @@ echo $message;
 
 
 // Q6 配列
-$prefecture = array('東京都', '神奈川県', '埼玉県', '栃木県', '千葉県', '群馬県', '茨城県');
+$prefecture = ['東京都', '神奈川県', '埼玉県', '栃木県', '千葉県', '群馬県', '茨城県',];
 
 echo $prefecture[3] . 'と' . $prefecture[4] . 'は関東地方の都道府県です。';
 
@@ -48,7 +48,7 @@ $prefecture = [
 	'埼玉県' => 'さいたま市', 
 	'栃木県' => '宇都宮市',  
 	'群馬県' => '前橋市', 
-	'茨城県' => '水戸市'
+	'茨城県' => '水戸市',
 ];
 foreach ($prefecture as $city) {
   echo $city . "\n";
@@ -63,7 +63,7 @@ $prefecture = [
     '埼玉県' => 'さいたま市', 
     '栃木県' => '宇都宮市',  
     '群馬県' => '前橋市', 
-    '茨城県' => '水戸市'
+    '茨城県' => '水戸市',
 ];
 
 foreach ($prefecture as $saitama => $city) {
@@ -83,10 +83,10 @@ $prefecture = [
     '群馬県' => '前橋市', 
     '茨城県' => '水戸市',
     '愛知県' => '名古屋市',
-    '大阪府' => '大阪市'
+    '大阪府' => '大阪市',
 ];
 
-$kanto_region = ["東京都", "神奈川県", "千葉県", "埼玉県", "栃木県",  "群馬県", "茨城県"];
+$kanto_region = ["東京都", "神奈川県", "千葉県", "埼玉県", "栃木県",  "群馬県", "茨城県",];
 
 foreach ($prefecture as $pref => $city) {
     if (in_array($pref, $kanto_region)) {
@@ -107,13 +107,13 @@ greet("花子");
 
 
 // Q11 関数-2
-function payMoney($price)
+function calcTaxInPrice($price)
 {
-    $calcTaxInPrice = $price * 1.1; 
-    return $price . "円の商品の税込み価格は" . $calcTaxInPrice . "円です。";
+$taxInPrice = $price * 1.1;
+return $price . "円の商品の税込み価格は" . $taxInPrice . "円です。";
 }
 
-echo payMoney(1000);
+echo calcTaxInPrice(1000);
 
 
 // Q12 関数とif文
